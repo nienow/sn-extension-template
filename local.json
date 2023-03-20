@@ -3,7 +3,7 @@
   "name": "My Editor (local)",
   "content_type": "SN|Component",
   "area": "editor-editor",
-  "version": "$VERSION$",
+  "version": "0.1.0",
   "description": "A custom editor",
   "url": "http://localhost:8080/",
   "download_url": "http://localhost:8080/latest.zip",
