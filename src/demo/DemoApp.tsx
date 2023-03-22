@@ -25,6 +25,11 @@ const Content = styled('div')`
 const ContentHeader = styled('div')`
   border-bottom: 1px solid var(--sn-stylekit-border-color);
   padding: 5px 20px;
+  display: flex;
+
+  div {
+    margin-right: 20px;
+  }
 `;
 
 const Status = styled('div')`
@@ -52,9 +57,15 @@ const EXAMPLES = [
 const DemoApp = () => {
   const [lastSaved, setLastSaved] = useState(null);
   const [selected, setSelected] = useState(0);
+  const [disabled, setDisabled] = useState(false);
 
   const renderMenuItem = (_, i) => {
     return <MenuItem className={selected === i ? 'selected' : ''} onClick={() => setSelected(i)}>{EXAMPLES[i].title}</MenuItem>;
+  };
+
+  const onToggleDisabled = (e) => {
+    setDisabled(e.target.checked);
+    console.log(e.target.checked);
   };
 
   const save = () => {
@@ -71,8 +82,12 @@ const DemoApp = () => {
             }
           </Menu>
           <Content>
-            <ContentHeader>{`Last Saved: ${lastSaved?.toLocaleTimeString()}`}</ContentHeader>
-            <EditorProvider text={EXAMPLES[selected].data} save={save}/>
+            <ContentHeader>
+              <div>{`Last Saved: ${lastSaved?.toLocaleTimeString()}`}</div>
+              <div><input id="editingDisabled" type="checkbox" value={'' + disabled} onChange={onToggleDisabled}></input><label
+                htmlFor="editingDisabled"> Editing Disabled</label></div>
+            </ContentHeader>
+            <EditorProvider text={EXAMPLES[selected].data} save={save} isLocked={disabled}/>
           </Content>
         </Container>
       </PopoverProvider>

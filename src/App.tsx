@@ -6,11 +6,11 @@ import {EditorProvider} from "./providers/EditorProvider";
 
 setup(React.createElement);
 
-const App = ({text, save}) => {
+const App = ({text, save, editorIsLocked}) => {
   return (
     <DialogProvider>
       <PopoverProvider>
-        <EditorProvider text={text} save={save}/>
+        <EditorProvider text={text} save={save} isLocked={editorIsLocked}/>
       </PopoverProvider>
     </DialogProvider>
   );

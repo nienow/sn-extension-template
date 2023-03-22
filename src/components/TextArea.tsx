@@ -15,7 +15,7 @@ const TextAreaField = styled('textarea')`
 `;
 
 const TextArea = ({}) => {
-  const {data, saveNote} = useEditor();
+  const {data, saveNote, isLocked} = useEditor();
 
   const [text, setText] = useState('');
 
@@ -30,7 +30,7 @@ const TextArea = ({}) => {
   };
 
   return (
-    <TextAreaField value={text} onChange={onLocalChange}></TextAreaField>
+    <TextAreaField disabled={isLocked} value={text} onChange={onLocalChange}></TextAreaField>
   );
 }
 
