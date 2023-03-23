@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {DialogProvider} from "../providers/DialogProvider";
 import {PopoverProvider} from "../providers/PopoverProvider";
 import {EditorProvider} from "../providers/EditorProvider";
@@ -32,12 +32,6 @@ const ContentHeader = styled('div')`
   }
 `;
 
-const Status = styled('div')`
-  font-weight: bold;
-  padding: 20px;
-  border-bottom: 1px solid var(--sn-stylekit-border-color);
-`
-
 const MenuItem = styled('div')`
   padding: 20px;
   cursor: pointer;
@@ -55,7 +49,7 @@ const EXAMPLES = [
 ]
 
 const DemoApp = () => {
-  const [lastSaved, setLastSaved] = useState(null);
+  const lastSavedRef = useRef<HTMLDivElement>();
   const [selected, setSelected] = useState(0);
   const [disabled, setDisabled] = useState(false);
 
@@ -65,27 +59,27 @@ const DemoApp = () => {
 
   const onToggleDisabled = (e) => {
     setDisabled(e.target.checked);
-    console.log(e.target.checked);
   };
 
   const save = () => {
-    setLastSaved(new Date());
+    if (lastSavedRef.current) {
+      lastSavedRef.current.textContent = `Last Saved: ${new Date().toLocaleTimeString()}`;
+    }
   };
   return (
     <DialogProvider>
       <PopoverProvider>
         <Container>
           <Menu>
-            <Status>Demos</Status>
             {
               EXAMPLES.map(renderMenuItem)
             }
           </Menu>
           <Content>
             <ContentHeader>
-              <div>{`Last Saved: ${lastSaved?.toLocaleTimeString()}`}</div>
               <div><input id="editingDisabled" type="checkbox" value={'' + disabled} onChange={onToggleDisabled}></input><label
                 htmlFor="editingDisabled"> Editing Disabled</label></div>
+              <div ref={lastSavedRef}></div>
             </ContentHeader>
             <EditorProvider text={EXAMPLES[selected].data} save={save} isLocked={disabled}/>
           </Content>
