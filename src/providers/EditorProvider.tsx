@@ -43,13 +43,16 @@ export const EditorProvider = ({text, save, isLocked}) => {
     if (text) {
       const parsedData = parseEditorData(text);
       if (parsedData) {
+        // data that matches our extension
         setData(parsedData);
         setUnsupported(false);
       } else {
+        // invalid data
         setData(null);
         setUnsupported(true);
       }
     } else {
+      // new note
       const newData = createNewData();
       setData(newData);
       setUnsupported(false);

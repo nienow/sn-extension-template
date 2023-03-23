@@ -1,6 +1,4 @@
 import React, {useRef, useState} from 'react';
-import {DialogProvider} from "../providers/DialogProvider";
-import {PopoverProvider} from "../providers/PopoverProvider";
 import {EditorProvider} from "../providers/EditorProvider";
 import {DATA_ONE, DATA_TWO, DATA_UNSUPPORTED} from "./test-data";
 import {setup, styled} from "goober";
@@ -67,25 +65,21 @@ const DemoApp = () => {
     }
   };
   return (
-    <DialogProvider>
-      <PopoverProvider>
-        <Container>
-          <Menu>
-            {
-              EXAMPLES.map(renderMenuItem)
-            }
-          </Menu>
-          <Content>
-            <ContentHeader>
-              <div><input id="editingDisabled" type="checkbox" value={'' + disabled} onChange={onToggleDisabled}></input><label
-                htmlFor="editingDisabled"> Editing Disabled</label></div>
-              <div ref={lastSavedRef}></div>
-            </ContentHeader>
-            <EditorProvider text={EXAMPLES[selected].data} save={save} isLocked={disabled}/>
-          </Content>
-        </Container>
-      </PopoverProvider>
-    </DialogProvider>
+    <Container>
+      <Menu>
+        {
+          EXAMPLES.map(renderMenuItem)
+        }
+      </Menu>
+      <Content>
+        <ContentHeader>
+          <div><input id="editingDisabled" type="checkbox" value={'' + disabled} onChange={onToggleDisabled}></input><label
+            htmlFor="editingDisabled"> Editing Disabled</label></div>
+          <div ref={lastSavedRef}></div>
+        </ContentHeader>
+        <EditorProvider text={EXAMPLES[selected].data} save={save} isLocked={disabled}/>
+      </Content>
+    </Container>
   );
 }
 
