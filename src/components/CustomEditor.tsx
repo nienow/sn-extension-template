@@ -1,17 +1,12 @@
 import React from 'react';
 import TextArea from "./TextArea";
-import {styled} from "goober";
 
-const Container = styled('div')`
-  padding: 20px;
-`;
-
-const CustomEditor = ({}) => {
+const CustomEditor = () => {
   return (
-    <Container>
+    <div className="main">
       <div>Custom Editor</div>
       <TextArea/>
-    </Container>
+    </div>
   );
 }
 

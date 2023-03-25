@@ -5,10 +5,6 @@ import {createRoot} from "react-dom/client";
 import {EditorProvider} from "./providers/EditorProvider";
 import ComponentRelay from "@standardnotes/component-relay";
 import {AppDataField} from "@standardnotes/models";
-import {setup} from "goober";
-
-setup(React.createElement);
-
 
 let currentNote;
 
