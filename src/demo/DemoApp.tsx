@@ -19,6 +19,7 @@ const DemoApp = () => {
   const iframeRef = useRef<HTMLIFrameElement>();
   const [selected, setSelected] = useState(0);
   const [disabled, setDisabled] = useState(false);
+  const [theme, setTheme] = useState('light');
 
   const changeMenuItem = (i) => {
     setSelected(i);
@@ -34,6 +35,11 @@ const DemoApp = () => {
     mock.toggleLock(e.target.checked);
   };
 
+  const onChangeTheme = (e) => {
+    setTheme(e.target.checked ? 'dark' : 'light');
+    mock.toggleTheme(e.target.checked);
+  };
+
   const onFrameLoad = () => {
     mock.onReady(iframeRef.current.contentWindow);
   };
@@ -46,8 +52,10 @@ const DemoApp = () => {
       </div>
       <div className="content">
         <div className="content-header">
-          <div><input id="editingDisabled" type="checkbox" value={'' + disabled} onChange={onToggleDisabled}></input><label
+          <div><input id="editingDisabled" type="checkbox" checked={disabled} onChange={onToggleDisabled}></input><label
             htmlFor="editingDisabled"> Editing Disabled</label></div>
+          <div><input id="isDark" type="checkbox" checked={theme === 'dark'} onChange={onChangeTheme}></input><label
+            htmlFor="isDark"> Dark Theme</label></div>
           <div id="last-saved"></div>
         </div>
         <iframe key={selected} ref={iframeRef} src="index.html" onLoad={onFrameLoad}/>

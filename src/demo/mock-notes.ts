@@ -24,6 +24,16 @@ export class MockStandardNotes {
     }, '*');
   }
 
+  public toggleTheme(isDark: boolean) {
+    const themes = isDark ? ['dark.css'] : [];
+    this.childWindow.postMessage({
+      action: 'themes',
+      data: {
+        themes
+      }
+    }, '*');
+  }
+
   public changeData(text: string) {
     this.updateStream(text);
     this.childWindow.postMessage({
@@ -35,7 +45,6 @@ export class MockStandardNotes {
 
   private handleMessage(e: MessageEvent) {
     const data = e.data;
-    console.log('mock: ', data);
     if (data.action === 'stream-context-item') {
       this.streamEvent = data;
       this.childWindow.postMessage({
