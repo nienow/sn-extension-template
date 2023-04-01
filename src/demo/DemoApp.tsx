@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react';
-import {EditorProvider} from "../providers/EditorProvider";
 import {DATA_ONE, DATA_TWO, DATA_UNSUPPORTED} from "./test-data";
+import {MockStandardNotes} from "./mock-notes";
 
 const EXAMPLES = [
   {title: 'One', data: DATA_ONE},
@@ -8,23 +8,34 @@ const EXAMPLES = [
   {title: 'Unsupported', data: DATA_UNSUPPORTED}
 ]
 
+const mock = new MockStandardNotes(DATA_ONE, () => {
+  const el = document.getElementById('last-saved');
+  if (el) {
+    el.textContent = `Last Saved: ${new Date().toLocaleTimeString()}`;
+  }
+});
+
 const DemoApp = () => {
-  const lastSavedRef = useRef<HTMLDivElement>();
+  const iframeRef = useRef<HTMLIFrameElement>();
   const [selected, setSelected] = useState(0);
   const [disabled, setDisabled] = useState(false);
 
+  const changeMenuItem = (i) => {
+    setSelected(i);
+    mock.changeData(EXAMPLES[i].data);
+  };
+
   const renderMenuItem = (_, i) => {
-    return <div className={selected === i ? 'menu-item selected' : 'menu-item'} onClick={() => setSelected(i)}>{EXAMPLES[i].title}</div>;
+    return <div className={selected === i ? 'menu-item selected' : 'menu-item'} onClick={() => changeMenuItem(i)}>{EXAMPLES[i].title}</div>;
   };
 
   const onToggleDisabled = (e) => {
     setDisabled(e.target.checked);
+    mock.toggleLock(e.target.checked);
   };
 
-  const save = () => {
-    if (lastSavedRef.current) {
-      lastSavedRef.current.textContent = `Last Saved: ${new Date().toLocaleTimeString()}`;
-    }
+  const onFrameLoad = () => {
+    mock.onReady(iframeRef.current.contentWindow);
   };
   return (
     <div className="demo">
@@ -37,9 +48,9 @@ const DemoApp = () => {
         <div className="content-header">
           <div><input id="editingDisabled" type="checkbox" value={'' + disabled} onChange={onToggleDisabled}></input><label
             htmlFor="editingDisabled"> Editing Disabled</label></div>
-          <div ref={lastSavedRef}></div>
+          <div id="last-saved"></div>
         </div>
-        <EditorProvider text={EXAMPLES[selected].data} save={save} isLocked={disabled}/>
+        <iframe key={selected} ref={iframeRef} src="index.html" onLoad={onFrameLoad}/>
       </div>
     </div>
   );

@@ -66,7 +66,7 @@ export const EditorProvider = ({text, save, isLocked}) => {
     } else if (unsupported) {
       return <Unsupported eraseFn={eraseDataAndStartNewNote}></Unsupported>;
     } else {
-      return <div>Loading...</div>
+      return <div></div>
     }
   };
 
