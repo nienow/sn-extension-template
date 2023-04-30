@@ -1,10 +1,12 @@
 import React from 'react';
 import TextArea from "./TextArea";
+import RowControl from "./RowControl";
 
 const CustomEditor = () => {
   return (
     <div className="main">
-      <div>Custom Editor</div>
+      <h1>Custom Editor</h1>
+      <RowControl/>
       <TextArea/>
     </div>
   );

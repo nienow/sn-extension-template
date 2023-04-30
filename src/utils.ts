@@ -1,19 +1,7 @@
-export const parseEditorData = (text: string) => {
-  if (text.indexOf('{') === 0) {
-    try {
-      const parsedData = JSON.parse(text);
-      if (parsedData.editor && parsedData.editor === 'my-editor') {
-        return parsedData;
-      }
-    } catch (e) {
-      console.error(e);
-    }
+export const getPreviewText = (text: string, limit = 50) => {
+  if (text.length <= limit) {
+    return text;
+  } else {
+    return text.substring(0, limit) + '...';
   }
-};
-
-export const createNewData = () => {
-  return {
-    editor: 'my-editor',
-    text: ''
-  };
 };

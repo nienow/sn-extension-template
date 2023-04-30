@@ -1,12 +1,13 @@
 import {REGISTERED_EVENT, STREAM_EVENT_DATA} from './mock-events';
+import {TestData} from './test-data';
 
 export class MockStandardNotes {
   private childWindow;
   private streamEvent;
   private streamData;
 
-  constructor(text: string, private onSave: () => void) {
-    this.updateStream(text);
+  constructor(data: TestData, private onSave: () => void) {
+    this.updateStream(data);
     window.addEventListener('message', this.handleMessage.bind(this));
   }
 
@@ -34,8 +35,8 @@ export class MockStandardNotes {
     }, '*');
   }
 
-  public changeData(text: string) {
-    this.updateStream(text);
+  public changeData(data: TestData) {
+    this.updateStream(data);
     this.childWindow.postMessage({
       action: 'reply',
       data: this.streamData,
@@ -62,8 +63,9 @@ export class MockStandardNotes {
     }
   }
 
-  private updateStream(text: string) {
+  private updateStream(data: TestData) {
     this.streamData = JSON.parse(JSON.stringify(STREAM_EVENT_DATA));
-    this.streamData.item.content.text = text;
+    this.streamData.item.content.text = data.text;
+    this.streamData.item.content.appData['my-editor'] = data.meta;
   }
 }

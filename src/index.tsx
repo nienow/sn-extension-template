@@ -2,9 +2,13 @@ import React from 'react';
 
 import './stylesheets/main.scss';
 import {createRoot} from "react-dom/client";
-import {EditorProvider} from "./providers/EditorProvider";
 import ComponentRelay from "@standardnotes/component-relay";
-import {AppDataField} from "@standardnotes/models";
+import {getPreviewText} from "./utils";
+import CustomEditor from "./components/CustomEditor";
+import {MyEditorMeta} from "./definitions";
+
+const SN_DOMAIN = 'org.standardnotes.sn';
+const MY_DOMAIN = 'my-editor';
 
 let currentNote;
 
@@ -17,25 +21,55 @@ const componentRelay = new ComponentRelay({
   }
 });
 
+
 componentRelay.streamContextItem((note) => {
   currentNote = note;
   // Only update UI on non-metadata updates.
-  if (note.isMetadataUpdate) {
-    return;
+  if (!note.isMetadataUpdate) {
+    rerender();
   }
-  const text = note.content?.text || '';
-  const isLocked = componentRelay.getItemAppDataValue(note, AppDataField.Locked);
-
-  createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-      <EditorProvider text={text} save={save} isLocked={isLocked}/>
-    </React.StrictMode>
-  );
 });
 
-const save = (data: any) => {
+export const rerender = () => {
+  createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+      <CustomEditor/>
+    </React.StrictMode>
+  );
+};
+
+const save = () => {
   componentRelay.saveItemWithPresave(currentNote, () => {
-    currentNote.content.text = JSON.stringify(data);
-    currentNote.content.preview_plain = data.text;
+    currentNote.content.preview_plain = getPreviewText(currentNote.content.text);
   });
 };
+
+export const text = (): string => {
+  return currentNote.content.text || '';
+}
+
+export const meta = (): MyEditorMeta => {
+  return currentNote.content.appData[MY_DOMAIN] || {};
+};
+
+export const isLocked = () => {
+  return currentNote.content.appData[SN_DOMAIN]['locked'];
+};
+
+export const updateText = (newText: string) => {
+  currentNote.content.text = newText;
+  save();
+};
+
+export const updateMeta = (newMeta: Partial<MyEditorMeta>) => {
+  currentNote.content.appData[MY_DOMAIN] = {
+    ...currentNote.content.appData[MY_DOMAIN],
+    ...newMeta
+  };
+  save();
+};
+
+
+
+
+

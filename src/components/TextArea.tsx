@@ -1,23 +1,21 @@
-import React, {useEffect, useState} from 'react';
-import {useEditor} from "../providers/EditorProvider";
+import React, {useState} from 'react';
+import {isLocked, meta, text, updateText} from "../index";
 
 const TextArea = () => {
-  const {data, saveNote, isLocked} = useEditor();
+  const [value, setValue] = useState(text());
 
-  const [text, setText] = useState('');
-
-  useEffect(() => {
-    setText(data.text);
-  }, [data]);
+  // useEffect(() => {
+  //   setValue(data);
+  // }, [data]);
 
   const onLocalChange = (e) => {
-    setText(e.target.value);
-    data.text = e.target.value;
-    saveNote();
+    setValue(e.target.value);
+    updateText(e.target.value);
   };
 
+  const rows = meta().rows;
   return (
-    <textarea disabled={isLocked} value={text} onChange={onLocalChange}></textarea>
+    <textarea rows={rows || 3} disabled={isLocked()} value={value} onChange={onLocalChange}></textarea>
   );
 }
 

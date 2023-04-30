@@ -1,14 +1,14 @@
 import React, {useRef, useState} from 'react';
-import {DATA_ONE, DATA_TWO, DATA_UNSUPPORTED} from "./test-data";
+import {TEST_DATA} from "./test-data";
 import {MockStandardNotes} from "./mock-notes";
 
-const EXAMPLES = [
-  {title: 'One', data: DATA_ONE},
-  {title: 'Two', data: DATA_TWO},
-  {title: 'Unsupported', data: DATA_UNSUPPORTED}
-]
+// const EXAMPLES = [
+//   {title: 'One', data: DATA_ONE},
+//   {title: 'Two', data: DATA_TWO},
+//   {title: 'Unsupported', data: DATA_UNSUPPORTED}
+// ]
 
-const mock = new MockStandardNotes(DATA_ONE, () => {
+const mock = new MockStandardNotes(TEST_DATA[0], () => {
   const el = document.getElementById('last-saved');
   if (el) {
     el.textContent = `Last Saved: ${new Date().toLocaleTimeString()}`;
@@ -23,11 +23,12 @@ const DemoApp = () => {
 
   const changeMenuItem = (i) => {
     setSelected(i);
-    mock.changeData(EXAMPLES[i].data);
+    mock.changeData(TEST_DATA[i]);
   };
 
   const renderMenuItem = (_, i) => {
-    return <div className={selected === i ? 'menu-item selected' : 'menu-item'} onClick={() => changeMenuItem(i)}>{EXAMPLES[i].title}</div>;
+    return <div className={selected === i ? 'menu-item selected' : 'menu-item'}
+                onClick={() => changeMenuItem(i)}>{TEST_DATA[i].title}</div>;
   };
 
   const onToggleDisabled = (e) => {
@@ -47,7 +48,7 @@ const DemoApp = () => {
     <div className="demo">
       <div className="menu">
         {
-          EXAMPLES.map(renderMenuItem)
+          TEST_DATA.map(renderMenuItem)
         }
       </div>
       <div className="content">
