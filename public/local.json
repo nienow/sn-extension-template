@@ -1,5 +1,5 @@
 {
-  "identifier": "my-editor",
+  "identifier": "my-editor.local",
   "name": "My Editor (local)",
   "content_type": "SN|Component",
   "area": "editor-editor",

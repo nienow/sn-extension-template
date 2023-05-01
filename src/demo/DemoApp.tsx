@@ -2,12 +2,6 @@ import React, {useRef, useState} from 'react';
 import {TEST_DATA} from "./test-data";
 import {MockStandardNotes} from "./mock-notes";
 
-// const EXAMPLES = [
-//   {title: 'One', data: DATA_ONE},
-//   {title: 'Two', data: DATA_TWO},
-//   {title: 'Unsupported', data: DATA_UNSUPPORTED}
-// ]
-
 const mock = new MockStandardNotes(TEST_DATA[0], () => {
   const el = document.getElementById('last-saved');
   if (el) {

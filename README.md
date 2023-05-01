@@ -1,13 +1,19 @@
 # Standard Notes Editor Extension Template
 
-Standard Notes extension that splits a note into multiple areas.
+Full Documentation & Demo at https://randombits.dev/standard-notes/template
 
-Documentation & Demo at https://randombits.dev/standard-notes/template
+## Getting Started
 
-## Development
+Click on the `Use this template` button in Github to create a new repo based on this template.
 
-Install Depedencies: `pnpm install`
+Then clone your new repo, install dependencies, and start the dev server.
 
-Dev Server: `pnpm run start`
+```
+# Install dependencies
+pnpm install
 
-Build: `pnpm run build`
+# Start Dev Server
+pnpm run start
+```
+
+The demo page should be launched automatically.
