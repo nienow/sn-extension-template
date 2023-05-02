@@ -3,10 +3,9 @@
   "name": "My Editor",
   "content_type": "SN|Component",
   "area": "editor-editor",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A custom editor",
   "url": "https://nienow.github.io/sn-extension-template/",
   "download_url": "https://nienow.github.io/sn-extension-template/latest.zip",
-  "latest_url": "https://nienow.github.io/sn-extension-template/ext.json",
-  "thumbnail_url": ""
+  "latest_url": "https://nienow.github.io/sn-extension-template/ext.json"
 }
