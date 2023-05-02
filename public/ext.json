@@ -1,5 +1,5 @@
 {
-  "identifier": "my-editor",
+  "identifier": "dev.randombits.my-editor",
   "name": "My Editor",
   "content_type": "SN|Component",
   "area": "editor-editor",

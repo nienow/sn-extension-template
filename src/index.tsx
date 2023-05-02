@@ -8,7 +8,7 @@ import CustomEditor from "./components/CustomEditor";
 import {MyEditorMeta} from "./definitions";
 
 const SN_DOMAIN = 'org.standardnotes.sn';
-const MY_DOMAIN = 'my-editor';
+const MY_DOMAIN = 'dev.randombits.my-editor';
 
 let currentNote;
 
