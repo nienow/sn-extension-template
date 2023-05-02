@@ -1,7 +1,7 @@
 import React from 'react';
 
-import '../stylesheets/main.scss';
-import '../stylesheets/demo.scss';
+import '../index.scss';
+import './demo.scss';
 import {createRoot} from "react-dom/client";
 import DemoApp from "./DemoApp";
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './stylesheets/main.scss';
+import './index.scss';
 import {createRoot} from "react-dom/client";
 import ComponentRelay from "@standardnotes/component-relay";
 import {getPreviewText} from "./utils";

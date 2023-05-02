@@ -7,6 +7,6 @@
   "description": "A custom editor",
   "url": "https://nienow.github.io/sn-extension-template/",
   "download_url": "https://nienow.github.io/sn-extension-template/latest.zip",
-  "latest_url": "https://nienow.github.io/sn-extension-template/package.json",
+  "latest_url": "https://nienow.github.io/sn-extension-template/ext.json",
   "thumbnail_url": ""
 }
