@@ -1,12 +1,9 @@
 {
-  "identifier": "my-editor.local",
+  "identifier": "dev.randombits.my-editor.local",
   "name": "My Editor (local)",
   "content_type": "SN|Component",
   "area": "editor-editor",
   "version": "0.0.1",
   "description": "A custom editor",
-  "url": "http://localhost:8080/",
-  "download_url": "http://localhost:8080/latest.zip",
-  "latest_url": "http://localhost:8080/package.json",
-  "thumbnail_url": ""
+  "url": "http://localhost:8080/"
 }

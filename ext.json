@@ -1,5 +1,5 @@
 {
-  "identifier": "my-editor",
+  "identifier": "dev.randombits.my-editor",
   "name": "My Editor",
   "content_type": "SN|Component",
   "area": "editor-editor",
@@ -7,6 +7,6 @@
   "description": "A custom editor",
   "url": "https://nienow.github.io/sn-extension-template/",
   "download_url": "https://nienow.github.io/sn-extension-template/latest.zip",
-  "latest_url": "https://nienow.github.io/sn-extension-template/package.json",
+  "latest_url": "https://nienow.github.io/sn-extension-template/ext.json",
   "thumbnail_url": ""
 }
