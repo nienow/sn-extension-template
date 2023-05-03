@@ -1,4 +1,4 @@
-import {MyEditorMeta} from '../providers/EditorProvider';
+import {MyEditorMeta} from '../definitions';
 
 export interface TestData {
   title: string;
