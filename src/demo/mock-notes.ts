@@ -1,5 +1,6 @@
 import {REGISTERED_EVENT, STREAM_EVENT_DATA} from './mock-events';
 import {TestData} from './test-data';
+import {MY_DOMAIN} from '../definitions';
 
 export class MockStandardNotes {
   private childWindow;
@@ -66,6 +67,6 @@ export class MockStandardNotes {
   private updateStream(data: TestData) {
     this.streamData = JSON.parse(JSON.stringify(STREAM_EVENT_DATA));
     this.streamData.item.content.text = data.text;
-    this.streamData.item.content.appData['dev.randombits.my-editor'] = data.meta;
+    this.streamData.item.content.appData[MY_DOMAIN] = data.meta;
   }
 }

@@ -5,10 +5,8 @@ import {createRoot} from "react-dom/client";
 import ComponentRelay from "@standardnotes/component-relay";
 import {getPreviewText} from "./utils";
 import CustomEditor from "./components/CustomEditor";
-import {MyEditorMeta} from "./definitions";
+import {MY_DOMAIN, MyEditorMeta, SN_DOMAIN} from "./definitions";
 
-const SN_DOMAIN = 'org.standardnotes.sn';
-const MY_DOMAIN = 'dev.randombits.my-editor';
 
 let currentNote;
 

@@ -21,7 +21,7 @@ export const STREAM_EVENT_DATA = {
       'text': 'Hello World',
       'title': 'Test',
       'noteType': 'unknown',
-      'editorIdentifier': 'my-editor',
+      'editorIdentifier': 'template',
       'references': [],
       'appData': {
         'org.standardnotes.sn': {
