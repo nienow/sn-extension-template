@@ -21,6 +21,7 @@ const componentRelay = new ComponentRelay({
   }
 });
 
+const root = createRoot(document.getElementById('root'));
 
 componentRelay.streamContextItem((note) => {
   currentNote = note;
@@ -31,7 +32,7 @@ componentRelay.streamContextItem((note) => {
 });
 
 export const rerender = () => {
-  createRoot(document.getElementById('root')).render(
+  root.render(
     <React.StrictMode>
       <CustomEditor/>
     </React.StrictMode>
