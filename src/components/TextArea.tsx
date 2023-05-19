@@ -4,10 +4,6 @@ import {isLocked, meta, text, updateText} from "../index";
 const TextArea = () => {
   const [value, setValue] = useState(text());
 
-  // useEffect(() => {
-  //   setValue(data);
-  // }, [data]);
-
   const onLocalChange = (e) => {
     setValue(e.target.value);
     updateText(e.target.value);

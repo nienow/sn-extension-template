@@ -6,14 +6,14 @@ Full Documentation & Demo at https://randombits.dev/standard-notes/template
 
 Click on the `Use this template` button in Github to create a new repo based on this template.
 
-Then clone your new repo, install dependencies, and start the dev server.
+Then clone your new repo, install dependencies, and start the dev server:
 
 ```
 # Install dependencies
-pnpm install
+npm install
 
 # Start Dev Server
-pnpm run start
+npm run start
 ```
 
 The demo page should be launched automatically.

@@ -12,7 +12,7 @@ export const EMPTY = {
 };
 export const SMALL = {
   title: 'Small',
-  text: 'My small editor',
+  text: 'This is the note content for the small example',
   meta: {
     rows: 3
   }
@@ -20,7 +20,7 @@ export const SMALL = {
 
 export const LARGE = {
   title: 'Large',
-  text: 'My large editor',
+  text: 'This is the note content for the large example',
   meta: {
     rows: 10
   }

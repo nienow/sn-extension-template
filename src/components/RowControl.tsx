@@ -12,10 +12,10 @@ const RowControl = () => {
 
   return (
     <div>
-      <span>Rows: </span>
       <button disabled={isLocked()} onClick={() => changeRows(rows - 1)}>-</button>
-      <span>{rows}</span>
+      <span> {rows} Rows </span>
       <button disabled={isLocked()} onClick={() => changeRows(rows + 1)}>+</button>
+      <span> (This is an example of saving metadata outside of the note content).</span>
     </div>
   );
 }
