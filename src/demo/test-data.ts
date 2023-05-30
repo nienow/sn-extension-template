@@ -1,16 +1,16 @@
-import {MyEditorMeta} from '../definitions';
+import {IMetadata} from '../definitions';
 
 export interface TestData {
   title: string;
   text: string;
-  meta?: MyEditorMeta;
+  meta?: IMetadata;
 }
 
-export const EMPTY = {
+const EMPTY = {
   title: 'Empty',
   text: ''
 };
-export const SMALL = {
+const SMALL = {
   title: 'Small',
   text: 'This is the note content for the small example',
   meta: {
@@ -18,7 +18,7 @@ export const SMALL = {
   }
 };
 
-export const LARGE = {
+const LARGE = {
   title: 'Large',
   text: 'This is the note content for the large example',
   meta: {

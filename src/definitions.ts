@@ -1,4 +1,4 @@
-export interface MyEditorMeta {
+export interface IMetadata {
   rows?: number;
 }
 

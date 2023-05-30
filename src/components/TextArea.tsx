@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
-import {isLocked, meta, text, updateText} from "../index";
+import {getNoteMetadata, getNoteText, isNoteLocked, updateNoteText} from "../sn-api";
 
 const TextArea = () => {
-  const [value, setValue] = useState(text());
+  const [value, setValue] = useState(getNoteText());
 
   const onLocalChange = (e) => {
     setValue(e.target.value);
-    updateText(e.target.value);
+    updateNoteText(e.target.value);
   };
 
-  const rows = meta().rows;
+  const rows = getNoteMetadata().rows;
   return (
-    <textarea rows={rows || 3} disabled={isLocked()} value={value} onChange={onLocalChange}></textarea>
+    <textarea rows={rows || 3} disabled={isNoteLocked()} value={value} onChange={onLocalChange}></textarea>
   );
 }
 
