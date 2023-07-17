@@ -1,21 +1,21 @@
 import React, {useState} from 'react';
-import {getNoteMetadata, isNoteLocked, updateNoteMetadata} from "../sn-api";
 import {rerenderRoot} from "../index";
+import snApi from "sn-extension-api";
 
 const RowControl = () => {
-  const [rows, setRows] = useState(getNoteMetadata().rows || 3);
+  const [rows, setRows] = useState(snApi.meta?.rows || 3);
 
   const changeRows = (newRows: number) => {
     setRows(newRows);
-    updateNoteMetadata({rows: newRows});
+    snApi.meta = {rows: newRows};
     rerenderRoot();
   };
 
   return (
     <div>
-      <button disabled={isNoteLocked()} onClick={() => changeRows(rows - 1)}>-</button>
+      <button disabled={snApi.locked} onClick={() => changeRows(rows - 1)}>-</button>
       <span> {rows} Rows </span>
-      <button disabled={isNoteLocked()} onClick={() => changeRows(rows + 1)}>+</button>
+      <button disabled={snApi.locked} onClick={() => changeRows(rows + 1)}>+</button>
       <span> (This is an example of saving metadata outside of the note content).</span>
     </div>
   );

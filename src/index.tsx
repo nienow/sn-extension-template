@@ -3,8 +3,7 @@ import React from 'react';
 import './index.scss';
 import {createRoot} from "react-dom/client";
 import CustomEditor from "./components/CustomEditor";
-import {connectToStandardNotes} from "./sn-api";
-
+import snApi from "sn-extension-api";
 
 const root = createRoot(document.getElementById('root'));
 
@@ -16,10 +15,10 @@ export const rerenderRoot = () => {
   );
 };
 
-connectToStandardNotes(rerenderRoot);
+snApi.initialize({
+  debounceSave: 400
+});
 
-
-
-
-
-
+snApi.subscribe(() => {
+  rerenderRoot();
+});

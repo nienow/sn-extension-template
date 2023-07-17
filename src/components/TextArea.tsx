@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
-import {getNoteMetadata, getNoteText, isNoteLocked, updateNoteText} from "../sn-api";
+import snApi from "sn-extension-api";
 
 const TextArea = () => {
-  const [value, setValue] = useState(getNoteText());
+  const [value, setValue] = useState(snApi.text);
 
   const onLocalChange = (e) => {
     setValue(e.target.value);
-    updateNoteText(e.target.value);
+    snApi.text = e.target.value;
   };
 
-  const rows = getNoteMetadata().rows;
+  const rows = snApi.meta?.rows;
   return (
-    <textarea rows={rows || 3} disabled={isNoteLocked()} value={value} onChange={onLocalChange}></textarea>
+    <textarea rows={rows || 3} disabled={snApi.locked} value={value} onChange={onLocalChange}></textarea>
   );
 }
 

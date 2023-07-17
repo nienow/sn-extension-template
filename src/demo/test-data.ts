@@ -1,9 +1,7 @@
-import {IMetadata} from '../definitions';
-
 export interface TestData {
   title: string;
   text: string;
-  meta?: IMetadata;
+  meta?: any;
 }
 
 const EMPTY = {
