@@ -16,7 +16,7 @@ const RowControl = () => {
       <button disabled={snApi.locked} onClick={() => changeRows(rows - 1)}>-</button>
       <span> {rows} Rows </span>
       <button disabled={snApi.locked} onClick={() => changeRows(rows + 1)}>+</button>
-      <span> (This is an example of saving metadata outside of the note content).</span>
+      <span> (This is an example of saving note metadata).</span>
     </div>
   );
 }

@@ -12,8 +12,20 @@ html {
   width: 100%;
 }
 
-.main {
+.main__Default {
   padding: 20px;
+
+  div {
+    padding: 5px;
+  }
+}
+
+.main__Comfortable {
+  padding: 30px;
+
+  div {
+    padding: 15px;
+  }
 }
 
 textarea {

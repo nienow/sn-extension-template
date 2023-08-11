@@ -1,6 +1,8 @@
 import {REGISTERED_EVENT, STREAM_EVENT_DATA} from './mock-events';
 import {TestData} from './test-data';
 
+let componentData = {};
+
 export class MockStandardNotes {
   private childWindow;
   private streamEvent;
@@ -13,7 +15,10 @@ export class MockStandardNotes {
 
   public onReady(childWindow) {
     this.childWindow = childWindow;
-    childWindow.postMessage(REGISTERED_EVENT);
+    childWindow.postMessage({
+      ...REGISTERED_EVENT,
+      componentData
+    });
   }
 
   public toggleLock(isLocked: boolean) {
@@ -60,6 +65,8 @@ export class MockStandardNotes {
         data: {},
         original: data
       }, '*');
+    } else if (data.action === 'set-component-data') {
+      componentData = data.data.componentData;
     }
   }
 
