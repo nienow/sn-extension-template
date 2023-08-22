@@ -2,7 +2,7 @@
 
 This is a template repo for building a Standard Notes Editor Extension.
 
-Full Documentation & Demo at https://randombits.dev/standard-notes/template
+For a companion guide, see the [Guide to creating Standard Notes Extensions](https://randombits.dev/standard-notes/creating-extensions)
 
 ## Getting Started
 
@@ -65,3 +65,9 @@ If you don’t know about Preact, it is smaller and faster than React, and conta
 There is a github workflow setup in `.github/workflows/node.js.yml`, which will automatically build and deploy your extension to github pages.
 
 If you use this workflow, make sure you have your Workflow Permissions set to “Read and write permissions” (under Settings -> Actions -> General).
+
+## Resources
+
+[Guide to creating Standard Notes Extensions](https://randombits.dev/standard-notes/creating-extensions)
+
+[Guide to installing Standard Notes Extensions](https://randombits.dev/standard-notes/installing-extensions)
