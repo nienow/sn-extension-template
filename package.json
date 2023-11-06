@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@preact/compat": "^17.1.2",
-    "preact": "^10.18.1",
+    "preact": "^10.18.2",
     "sn-extension-api": "0.3.4"
   },
   "devDependencies": {
