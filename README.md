@@ -64,7 +64,7 @@ If you don’t know about Preact, it is smaller and faster than React, and conta
 
 There is a github workflow setup in `.github/workflows/node.js.yml`, which will automatically build and deploy your plugin to github pages.
 
-If you use this workflow, make sure you have your Workflow Permissions set to “Read and write permissions” (under Settings -> Actions -> General).
+You will just need to create a `gh-pages` branch. You may also need to manually enable Github Pages settings on your repository (see [here](https://github.com/peaceiris/actions-gh-pages?tab=readme-ov-file#%EF%B8%8F-first-deployment-with-github_token)).
 
 ## Resources
 
