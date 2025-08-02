@@ -15,8 +15,8 @@ importers:
         specifier: ^10.27.0
         version: 10.27.0
       sn-extension-api:
-        specifier: 0.3.4
-        version: 0.3.4
+        specifier: ^0.4.0
+        version: 0.4.0
     devDependencies:
       '@babel/core':
         specifier: ^7.28.0
@@ -2493,8 +2493,8 @@ packages:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
 
-  sn-extension-api@0.3.4:
-    resolution: {integrity: sha512-3afmzoDZCx9AYSuQqd2QenGaC9TsrHqrzR53J01tuCiyP2Cu0BGLTVE2uHie5BzSi91XrIlbGnucNOGjutsgUg==}
+  sn-extension-api@0.4.0:
+    resolution: {integrity: sha512-0fO+ak88P194hIXqi+7HJuApZbirWNEW3Dk6L8iAmgiO7v2gAh/Y38QHKO0baM942+LWqLCIX8dajNZlvbP4nQ==}
 
   snapdragon-node@2.1.1:
     resolution: {integrity: sha512-O27l4xaMYt/RSQ5TR3vpWCAB5Kb/czIcqUFOM/C4fYcLnbZUc1PkjTAMjof2pBWaSTwOUd6qUHcFGVGj7aIwnw==}
@@ -5571,7 +5571,7 @@ snapshots:
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
 
-  sn-extension-api@0.3.4: {}
+  sn-extension-api@0.4.0: {}
 
   snapdragon-node@2.1.1:
     dependencies:
