@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@preact/compat':
         specifier: ^18.3.1
-        version: 18.3.1(preact@10.27.2)
+        version: 18.3.1(preact@10.28.0)
       preact:
-        specifier: ^10.27.2
-        version: 10.27.2
+        specifier: ^10.28.0
+        version: 10.28.0
       sn-extension-api:
         specifier: ^0.4.0
         version: 0.4.0
@@ -52,11 +52,11 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       sass:
-        specifier: ^1.94.2
-        version: 1.94.2
+        specifier: ^1.94.3
+        version: 1.94.3
       sass-loader:
         specifier: ^16.0.6
-        version: 16.0.6(sass@1.94.2)(webpack@5.103.0)
+        version: 16.0.6(sass@1.94.3)(webpack@5.103.0)
       style-loader:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.103.0)
@@ -1160,9 +1160,9 @@ packages:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
     engines: {node: '>= 8.10.0'}
 
-  chokidar@4.0.3:
-    resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
-    engines: {node: '>= 14.16.0'}
+  chokidar@5.0.0:
+    resolution: {integrity: sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==}
+    engines: {node: '>= 20.19.0'}
 
   chrome-trace-event@1.0.4:
     resolution: {integrity: sha512-rNjApaLzuwaOTjCiT8lSDdGN1APCiqkChLMJxJPWLunPAt5fy8xgU9/jNOchV84wfIxrA0lRQB7oCT8jrn/wrQ==}
@@ -2252,8 +2252,8 @@ packages:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
     engines: {node: ^10 || ^12 || >=14}
 
-  preact@10.27.2:
-    resolution: {integrity: sha512-5SYSgFKSyhCbk6SrXyMpqjb5+MQBgfvEKE/OC+PujcY34sOpqtr+0AZQtPYx5IA6VxynQ7rUPCtKzyovpj9Bpg==}
+  preact@10.28.0:
+    resolution: {integrity: sha512-rytDAoiXr3+t6OIP3WGlDd0ouCUG1iCWzkcY3++Nreuoi17y6T5i/zRhe6uYfoVcxq6YU+sBtJouuRDsq8vvqA==}
 
   pretty-error@4.0.0:
     resolution: {integrity: sha512-AoJ5YMAcXKYxKhuJGdcvse+Voc6v1RgnsR3nWcYU7q4t6z0Q6T86sv5Zq8VIRbOWWFpvdGE83LtdSMNd+6Y0xw==}
@@ -2303,9 +2303,9 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
-  readdirp@4.1.2:
-    resolution: {integrity: sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==}
-    engines: {node: '>= 14.18.0'}
+  readdirp@5.0.0:
+    resolution: {integrity: sha512-9u/XQ1pvrQtYyMpZe7DXKv2p5CNvyVwzUB6uhLAnQwHMSgKMBR62lc7AHljaeteeHXn11XTAaLLUVZYVZyuRBQ==}
+    engines: {node: '>= 20.19.0'}
 
   rechoir@0.8.0:
     resolution: {integrity: sha512-/vxpCXddiX8NGfGO/mTafwjq4aFa/71pvamip0++IQk3zG8cbCj0fifNPrjjF1XMXUne91jL9OoxmdykoEtifQ==}
@@ -2425,8 +2425,8 @@ packages:
       webpack:
         optional: true
 
-  sass@1.94.2:
-    resolution: {integrity: sha512-N+7WK20/wOr7CzA2snJcUSSNTCzeCGUTFY3OgeQP3mZ1aj9NMQ0mSTXwlrnd89j33zzQJGqIN52GIOmYrfq46A==}
+  sass@1.94.3:
+    resolution: {integrity: sha512-AhSSJrOPvcPEbTEQJxCt4vhIeAmLpLaVkNZF06oYM+H3HkipZ21bbD4i4B1Vj3MNUIBsytNjwXAe7CGQ7f0nag==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -3757,9 +3757,9 @@ snapshots:
       '@parcel/watcher-win32-x64': 2.5.1
     optional: true
 
-  '@preact/compat@18.3.1(preact@10.27.2)':
+  '@preact/compat@18.3.1(preact@10.28.0)':
     dependencies:
-      preact: 10.27.2
+      preact: 10.28.0
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -4243,9 +4243,9 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  chokidar@4.0.3:
+  chokidar@5.0.0:
     dependencies:
-      readdirp: 4.1.2
+      readdirp: 5.0.0
 
   chrome-trace-event@1.0.4: {}
 
@@ -5328,7 +5328,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  preact@10.27.2: {}
+  preact@10.28.0: {}
 
   pretty-error@4.0.0:
     dependencies:
@@ -5391,7 +5391,7 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  readdirp@4.1.2: {}
+  readdirp@5.0.0: {}
 
   rechoir@0.8.0:
     dependencies:
@@ -5479,16 +5479,16 @@ snapshots:
 
   safer-buffer@2.1.2: {}
 
-  sass-loader@16.0.6(sass@1.94.2)(webpack@5.103.0):
+  sass-loader@16.0.6(sass@1.94.3)(webpack@5.103.0):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
-      sass: 1.94.2
+      sass: 1.94.3
       webpack: 5.103.0(webpack-cli@6.0.1)
 
-  sass@1.94.2:
+  sass@1.94.3:
     dependencies:
-      chokidar: 4.0.3
+      chokidar: 5.0.0
       immutable: 5.1.4
       source-map-js: 1.2.1
     optionalDependencies:
